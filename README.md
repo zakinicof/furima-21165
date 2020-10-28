@@ -30,7 +30,7 @@
 | shipping_payer_id  | integer    | null: false, foreign_key: true |
 | prefecture_code_id | integer    | null: false                    |
 | preparation_day_id | integer    | null: false, foreign_key: true |
-| user_id            | references | null: false, foreign_key: true |
+| user               | references | null: false, foreign_key: true |
 
 
 
@@ -49,7 +49,7 @@
 | address                 | string     | null : false                  |
 | building_name           | string     |                               |
 | phone_number            | string     | null : false                  |
-| purchase_managements_id | references | null: false, foreign_key: true |
+| purchase_management     | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -59,12 +59,12 @@
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| user_id         | references | null: false, foreign_key: true |
-| item_id         | references | null: false, foreign_key: true |
+| user            | references | null: false, foreign_key: true |
+| item            | references | null: false, foreign_key: true |
 
 
 ### Association
 - has_one :shipping_address
 - belongs_to :item
-- belongs_to :users
+- belongs_to :user
 
